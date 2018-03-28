@@ -16,13 +16,39 @@ const movieImgs = [
 
 ]
 
+const movies = [
+{
+	title: "the Intern",
+	poster: "https://goodmenproject.com/wp-content/uploads/2015/09/The-Intern-new-poster.jpg",
+},
+{
+	title: "Old Boy",
+	poster: "https://upload.wikimedia.org/wikipedia/en/6/67/Oldboykoreanposter.jpg"
+},
+{
+	title: "Known Girl",
+	poster: "http://cfile5.uf.tistory.com/image/2578304C56B75E611E9874"
+}
+]
+
+
 class App extends Component {
+
+	componentWillMount()	{
+		console.log("will mount");
+	}
+
+	componentDidMount()	{
+		console.log("did mount");
+	}
+
   render() {
+  	console.log("did render");
     return (
       <div className="App">
-       	<Movie title={movieTitles[0]} poster={movieImgs[0]}/>
-       	<Movie title={movieTitles[1]} poster={movieImgs[1]}/>
-       	<Movie title={movieTitles[2]} poster={movieImgs[2]}/>
+       	{movies.map( (movie, index) => {
+       		return <Movie title={movie.title} poster={movie.poster} key={index}/>
+       	})}
       </div>
     );
   }
