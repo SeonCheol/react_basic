@@ -24,33 +24,11 @@ class App extends Component {
 	}
 
 	componentWillMount()	{
-		setTimeout(()	=>{
-			this.setState({
-				greeting : "Hello!",
-				movies : [
-				{
-					title: "the Intern",
-					poster: "https://goodmenproject.com/wp-content/uploads/2015/09/The-Intern-new-poster.jpg",
-				},
-				{
-					title: "Old Boy",
-					poster: "https://upload.wikimedia.org/wikipedia/en/6/67/Oldboykoreanposter.jpg"
-				},
-				{
-					title: "Known Girl",
-					poster: "http://cfile5.uf.tistory.com/image/2578304C56B75E611E9874"
-				},
-				{
-					title: "Love 911",
-					poster: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQltX-WDtmG8LUaqqeWvpvcOQSG4OKGjjiBk5TU88fufL3BQnSDgA"
-				}
-				]
-			})
-		}, 5000)
+
 	}
 
 	componentDidMount()	{
-		console.log("did mount");
+		console.log(fetch("https://yts.ag/api/v2/list_movies.json?sort_by=rating"))
 	}
 
 	_renderMovies = () => {
