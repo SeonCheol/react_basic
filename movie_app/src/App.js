@@ -28,7 +28,16 @@ class App extends Component {
 	}
 
 	componentDidMount()	{
-		console.log(fetch("https://yts.ag/api/v2/list_movies.json?sort_by=rating"))
+		fetch(
+			"http:/localhost:3000/movie_info.json",
+			{
+				method: 'GET',
+				mode : 'cors',
+				
+			}
+			)
+		.then(res => console.log(res))
+		.catch(err => console.log(err))
 	}
 
 	_renderMovies = () => {
