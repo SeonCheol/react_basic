@@ -6,13 +6,15 @@
   "license": "MIT",
   "dependencies": {
     "dotenv": "^6.1.0",
+    "joi": "^13.7.0",
     "koa": "^2.5.3",
+    "koa-bodyparser": "^4.2.1",
     "koa-router": "^7.4.0",
     "mongoose": "^5.3.2"
   },
   "scripts": {
-    "server-start": "node src",
-    "server-start:dev": "nodemon --watch src/ src/index.js"
+    "server-start": "NODE_PATH=src node src",
+    "server-start:dev": "NODE_PATH=src nodemon --watch src/ src/index.js"
   },
   "devDependencies": {
     "nodemon": "^1.18.4"
